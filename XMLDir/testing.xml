@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<abstractGroup>
+    <abstract type="executiveSummary" xml:id="vde12809-sec-000111">
+        <doi>2234.221</doi>
+        hellllllllo
+        <section xml:id="vde12809-sec-0001">
+            <titleGroup type="helloo">
+                <title type="main">Background</title>
+            </titleGroup>
+            <p>The data for these genes have been
+                deposited with the EMBL/GenBank Data Libraries under
+                Accession No. <accessionId ref="info:ddbj-embl-genbank/AF114696">AF114696</accessionId>.</p>
+
+            <figure>hello</figure>
+            <feature>hello</feature>
+        </section>
+        <block type ="pullQuote">
+            <section>
+                sadas
+            </section>
+        </block>
+        <p>
+            <blockFixed type="text">
+                asdasdas
+            </blockFixed>
+            <blockFixed type="quotation">
+                asdasdas
+            </blockFixed>
+            <blockFixed type="signatureBlock">
+                asdasdas
+            </blockFixed>
+            <chemicalStructure>
+                sdas
+            </chemicalStructure>
+            <chemicalStructure>
+                sdas
+            </chemicalStructure>
+        </p>
+    </abstract>
+</abstractGroup>

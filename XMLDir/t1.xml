@@ -1,0 +1,20 @@
+<abstractGroup>
+    <abstract type="main" xml:id="vde12809-abs-0001" xml:lang="en">
+
+        <section>
+            <title type="main">Title A</title>
+            <p>text A</p>
+        </section>
+
+        <section xml:id="vde12809-sec-0002">
+            <title>Title B</title>
+            <p>text B</p>
+        </section>
+
+        <section xml:id="vde12809-sec-0003">
+            <title type="main">Title C</title>
+            <p>Text C</p>
+        </section>
+
+    </abstract>
+</abstractGroup>

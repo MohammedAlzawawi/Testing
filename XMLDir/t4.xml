@@ -1,0 +1,18 @@
+<abstractGroup>
+    <abstract type="main" xml:lang="en">
+        <title type="main">Title A</title>
+        <p>Text A</p>
+    </abstract>
+
+    <abstract xml:id="crat202100257-abs-0001" type="graphical" xml:lang="en">
+        <p>Text B
+
+            <blockFixed type="graphic">
+                <mediaResourceGroup>
+
+                    <mediaResource xml:id = "55" mimeType="image/png" href="graphic/crat202100257-gra-0001-m.png" rendition="webHiRes" alt="image"/>
+
+                </mediaResourceGroup>
+            </blockFixed></p>
+    </abstract>
+</abstractGroup>
