@@ -26,6 +26,8 @@
     </abstract>
   </xsl:template>
 
+  <xsl:template match="abstract[@type = 'graphical']" />
+
   <xsl:template match="abstract/@type">
 
     <xsl:variable name="typeValue">
@@ -71,7 +73,7 @@
   <xsl:template match="tabular">
     <sec>
       <table-wrap-group>
-        <xsl:apply-templates select="@*|node()"/>
+        <xsl:apply-templates select="@xml:id | @xml:lang |node()"/>
       </table-wrap-group>
     </sec>
   </xsl:template>
@@ -141,26 +143,25 @@
   <!-- Section -->
   <xsl:template match="section">
     <sec>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@xml:id | @xml:lang |node()"/>
     </sec>
   </xsl:template>
 
   <xsl:template match="section/feature">
     <boxed-text position="float" content-type="feature-floating">
-      <xsl:attribute name="position">float</xsl:attribute>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@xml:id | @xml:lang |node()"/>
     </boxed-text>
   </xsl:template>
 
   <xsl:template match="section/tabular">
     <table-wrap>
-      <xsl:apply-templates select="@*|node()"/>
+      <xsl:apply-templates select="@xml:id | @xml:lang | node()"/>
     </table-wrap>
   </xsl:template>
 
   <xsl:template match="section/figure">
     <fig>
-      <xsl:apply-templates select="@* | node()"/>
+      <xsl:apply-templates select="@xml:id | @xml:lang | node()"/>
     </fig>
   </xsl:template>
 
@@ -437,7 +438,7 @@
       <xsl:when test="@alt">
         <graphic>
           <xsl:apply-templates select="@* | node()"/>
-          <alt><xsl:value-of select="@alt"/></alt>
+          <alt-text><xsl:value-of select="@alt"/></alt-text>
         </graphic>
       </xsl:when>
       <xsl:otherwise>
@@ -450,7 +451,21 @@
 
   <xsl:template match="mediaResource/@alt">
   </xsl:template>
+
+  <xsl:template match="sup">
+    <sup>
+      <xsl:apply-templates />
+    </sup>
+  </xsl:template>
+
+  <xsl:template match="sub">
+    <sub>
+      <xsl:apply-templates />
+    </sub>
+  </xsl:template>
   <!-- deleting unwanted tags -->
+  <xsl:template match="@copyright" />
+  <xsl:template match="@eRights" />
   <xsl:template match="useSectionTitles"/>
   <xsl:template match="doi"/>
   <xsl:template match="recipe"/>
@@ -458,7 +473,8 @@
 
 
   <!-- Common Attributes -->
-  <xsl:template match="@xml:id">
+
+  <xsl:template match="@id">
     <xsl:variable name="id">
     <xsl:value-of select="."/>
   </xsl:variable>
@@ -467,7 +483,7 @@
   </xsl:attribute>
   </xsl:template>
 
-  <xsl:template match="@xml:lang">
+  <xsl:template match="@lang">
     <xsl:variable name="lang">
       <xsl:value-of select="."/>
     </xsl:variable>

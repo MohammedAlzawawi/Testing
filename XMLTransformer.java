@@ -3,7 +3,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javax.lang.model.util.Elements;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -49,6 +48,12 @@ public class XMLTransformer {
 
             NodeList newDoc = doc.getElementsByTagName("abstractGroup");
             Node node = newDoc.item(0);
+
+            if(node == null){
+                System.out.println("File " + inputFile.getName() + " does not have an abstractGroup tag");
+                return;
+            }
+
             Document doc2 = node.getOwnerDocument();
 
             String curDirectory = System.getProperty("user.dir");
