@@ -61,6 +61,8 @@ public class XMLTransformer {
             Source xsltSource = new StreamSource(new File(curDirectory + "/transform.xslt"));
             Transformer transformer = transformerFactory.newTransformer(xsltSource);
             DOMSource xmlSource = new DOMSource(doc2);
+            Source inputSource = new StreamSource(inputFile);
+
             String outputFileName = inputFile.getName().replace(".xml", ".xml");
 
             String resultDirectoryName = outputDir + "/result";
