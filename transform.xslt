@@ -39,6 +39,7 @@
 
     <xsl:if test="number($level) &lt;= number($maxLevel)">
       <xsl:for-each select="section">
+        <xsl:if test="count(title) > 0 or count(titleGroup) > 0">
           <xsl:element name="sec">
             <xsl:apply-templates select="title | titleGroup" mode="useSectionTitle" />
             <xsl:call-template name="useSectionTitle_collection">
@@ -46,8 +47,9 @@
               <xsl:with-param name="maxLevel" select="number($maxLevel)"/>
             </xsl:call-template>
           </xsl:element>
-        </xsl:for-each>
-    </xsl:if>
+        </xsl:if>
+      </xsl:for-each>
+  </xsl:if>
   </xsl:template>
 
   <xsl:template match="title" mode="useSectionTitle">
