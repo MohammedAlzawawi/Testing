@@ -21,7 +21,7 @@
     </abstract>
   </xsl:template>
 
-  <xsl:template match="useSectionTitle">
+  <xsl:template match="useSectionTitles">
     <xsl:variable name="title_level"><xsl:value-of select="@level"/></xsl:variable>
 
     <xsl:for-each select="//body[1]">
